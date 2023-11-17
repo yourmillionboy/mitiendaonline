@@ -130,19 +130,4 @@ function mostrarDetallesProducto(idProducto) {
     precioDetalle.textContent = `Precio: $${precio.toFixed(2)}`;
 
     const detallesProducto = document.getElementById('detalles-producto');
-    detallesProducto.classList.remove('oculto');
-}
-
-// Función para cerrar los detalles de un producto
-function cerrarDetallesProducto() {
-    const detallesProducto = document.getElementById('detalles-producto');
-    detallesProducto.classList.add('oculto');
-}
-
-// ... Otras funciones y código ...
-
-// Evento para cargar y mostrar productos al cargar la página
-window.addEventListener('load', () => {
-    mostrarProductos();
-});
-
+    detallesProducto.classList.remove('oc
