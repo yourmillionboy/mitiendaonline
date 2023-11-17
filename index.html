@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Tienda Digital</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tu Tienda Digital</h1>
+    </header>
+    
+    <section id="productos">
+        <article class="producto">
+            <img src="producto1.jpg" alt="Producto 1">
+            <h2>Producto 1</h2>
+            <p>Descripción del Producto 1.</p>
+            <p class="precio">$19.99</p>
+            <button onclick="agregarAlCarrito(1)">Agregar al Carrito</button>
+        </article>
+
+        <!-- Repite este bloque para cada producto -->
+
+    </section>
+
+    <aside id="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito">
+            <!-- La lista de productos en el carrito se actualizará dinámicamente con JavaScript -->
+        </ul>
+        <p id="total">Total: $0.00</p>
+        <button onclick="realizarCompra()">Realizar Compra</button>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>
