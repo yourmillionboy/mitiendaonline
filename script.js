@@ -23,6 +23,11 @@ function ocultarFormularioLogin() {
     formularioLogin.classList.add('oculto');
 }
 
+// Función para cerrar el formulario de inicio de sesión
+function cerrarFormularioLogin() {
+    ocultarFormularioLogin();
+}
+
 // Función para iniciar sesión (simulada)
 function iniciarSesion() {
     const usuarioInput = document.getElementById('usuario');
@@ -115,4 +120,29 @@ function mostrarDetallesProducto(idProducto) {
 
     // Mostrar detalles en la interfaz
     const imagenDetalle = document.getElementById('imagen-detalle');
-    const nombreDetalle = document
+    const nombreDetalle = document.getElementById('nombre-detalle');
+    const descripcionDetalle = document.getElementById('descripcion-detalle');
+    const precioDetalle = document.getElementById('precio-detalle');
+
+    imagenDetalle.src = `imagen_${idProducto}.jpg`; // Ajusta la ruta según tus necesidades
+    nombreDetalle.textContent = nombre;
+    descripcionDetalle.textContent = descripcion;
+    precioDetalle.textContent = `Precio: $${precio.toFixed(2)}`;
+
+    const detallesProducto = document.getElementById('detalles-producto');
+    detallesProducto.classList.remove('oculto');
+}
+
+// Función para cerrar los detalles de un producto
+function cerrarDetallesProducto() {
+    const detallesProducto = document.getElementById('detalles-producto');
+    detallesProducto.classList.add('oculto');
+}
+
+// ... Otras funciones y código ...
+
+// Evento para cargar y mostrar productos al cargar la página
+window.addEventListener('load', () => {
+    mostrarProductos();
+});
+
