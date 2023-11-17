@@ -3,56 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Tienda de Lujo</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Tienda Online</title>
 </head>
 <body>
-    <header>
-        <div class="titulo">
-            <h1>Mi Tienda de Lujo</h1>
-            <p>Descubre la elegancia digital</p>
+
+<header>
+    <div class="titulo">
+        <h1>Tienda Online</h1>
+        <p>Bienvenido a la mejor tienda en línea</p>
+    </div>
+</header>
+
+<!-- Formulario de inicio de sesión -->
+<div id="formulario-login" class="oculto">
+    <form onsubmit="iniciarSesion(); return false;">
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" required>
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" required>
+        <button type="submit">Iniciar Sesión</button>
+    </form>
+</div>
+
+<!-- Filtros y ordenación de productos -->
+<div id="filtros">
+    <label for="filtro-precio">Filtrar por precio:</label>
+    <select id="filtro-precio" onchange="filtrarPorPrecio()">
+        <option value="todos">Todos los precios</option>
+        <option value="0-50">$0 - $50</option>
+        <option value="50-100">$50 - $100</option>
+        <option value="100-200">$100 - $200</option>
+    </select>
+
+    <label for="ordenar-por">Ordenar por:</label>
+    <select id="ordenar-por" onchange="ordenarProductos()">
+        <option value="nombre-ascendente">Nombre ascendente</option>
+        <option value="nombre-descendente">Nombre descendente</option>
+        <option value="precio-ascendente">Precio ascendente</option>
+        <option value="precio-descendente">Precio descendente</option>
+    </select>
+</div>
+
+<!-- Contenedor de productos -->
+<main id="productos"></main>
+
+<!-- Carrito de compras -->
+<aside id="carrito" class="oculto">
+    <h2>Carrito de Compras</h2>
+    <ul id="lista-carrito"></ul>
+    <p id="total">Total: $0.00</p>
+    <button onclick="realizarCompra()">Realizar Compra</button>
+    <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+</aside>
+
+<!-- Detalles del producto -->
+<div id="detalles-producto" class="oculto">
+    <div class="contenedor-detalles">
+        <img id="imagen-detalle" src="" alt="Detalles del Producto">
+        <div class="informacion-detalle">
+            <h2 id="nombre-detalle"></h2>
+            <p id="descripcion-detalle"></p>
+            <p id="precio-detalle"></p>
+            <button onclick="cerrarDetallesProducto()">Cerrar</button>
         </div>
-    </header>
-    
-    <main>
-        <section id="productos">
-            <!-- Ejemplo de producto -->
-            <div class="producto" onclick="mostrarDetallesProducto(1)">
-                <img src="producto1.jpg" alt="Producto 1">
-                <h2>Producto 1</h2>
-                <p class="precio">$199.99</p>
-            </div>
-            <!-- Repite este bloque para cada producto -->
-        </section>
+    </div>
+</div>
 
-        <section id="detalles-producto" class="oculto">
-            <div class="contenedor-detalles">
-                <button onclick="cerrarDetallesProducto()">Cerrar</button>
-                <img id="imagen-detalle" src="" alt="Detalle del Producto">
-                <div class="informacion-detalle">
-                    <h2 id="nombre-detalle"></h2>
-                    <p id="descripcion-detalle"></p>
-                    <p class="precio" id="precio-detalle"></p>
-                    <button onclick="agregarAlCarrito(1, 'Producto 1', 199.99)">Agregar al Carrito</button>
-                </div>
-            </div>
-        </section>
-    </main>
+<footer>
+    <p>&copy; 2023 Tienda Online</p>
+</footer>
 
-    <aside id="carrito" class="oculto">
-        <h2>Carrito de Compras</h2>
-        <ul id="lista-carrito">
-            <!-- La lista de productos en el carrito se actualizará dinámicamente con JavaScript -->
-        </ul>
-        <p id="total">Total: $0.00</p>
-        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
-        <button onclick="realizarCompra()">Realizar Compra</button>
-    </aside>
-
-    <footer>
-        <p>&copy; 2023 Mi Tienda de Lujo. Todos los derechos reservados.</p>
-    </footer>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
