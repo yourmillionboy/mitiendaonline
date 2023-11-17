@@ -12,7 +12,7 @@
 
 ## Demo
 
-Puedes ver una demostración en vivo de la tienda en [https://tuusuario.github.io/mi-tienda-digital](https://tuusuario.github.io/mi-tienda-digital).
+Puedes ver una demostración en vivo de la tienda en [https://tuusuario.github.io/mi-tienda-digital](https://yourmillionboy.github.io/mitiendaonline).
 
 ## Características
 
