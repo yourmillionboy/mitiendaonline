@@ -3,25 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Tienda Digital</title>
+    <title>Mi Tienda Digital</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Tu Tienda Digital</h1>
+        <div class="titulo">
+            <h1>Mi Tienda Digital</h1>
+            <p>Tu destino para productos digitales increíbles</p>
+        </div>
     </header>
     
     <section id="productos">
-        <article class="producto">
-            <img src="producto1.jpg" alt="Producto 1">
-            <h2>Producto 1</h2>
-            <p>Descripción del Producto 1.</p>
-            <p class="precio">$19.99</p>
-            <button onclick="agregarAlCarrito(1)">Agregar al Carrito</button>
-        </article>
-
-        <!-- Repite este bloque para cada producto -->
-
+        <!-- ... (tu lista de productos) ... -->
     </section>
 
     <aside id="carrito">
@@ -30,8 +24,13 @@
             <!-- La lista de productos en el carrito se actualizará dinámicamente con JavaScript -->
         </ul>
         <p id="total">Total: $0.00</p>
+        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
         <button onclick="realizarCompra()">Realizar Compra</button>
     </aside>
+
+    <footer>
+        <p>&copy; 2023 Mi Tienda Digital. Todos los derechos reservados.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
