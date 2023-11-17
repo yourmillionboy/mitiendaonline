@@ -13,11 +13,9 @@ header {
     text-align: center;
 }
 
-header p {
-    margin: 10px 0 0;
-}
+/* Contenedor de productos */
 
-main {
+#productos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -25,113 +23,75 @@ main {
 }
 
 .producto {
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     border-radius: 8px;
-    margin: 15px;
-    padding: 15px;
-    width: 250px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-}
-
-.producto:hover {
-    transform: scale(1.05);
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
 }
 
 .producto img {
     max-width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
-#carrito {
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+.producto h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.precio {
+    color: #e44d26;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.boton-accion {
+    background-color: #e44d26;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+/* Filtros y ordenación */
+
+#filtros {
     margin: 20px;
-    padding: 15px;
-    text-align: center;
+}
+
+/* Carrito de compras */
+
+#carrito {
     position: fixed;
     top: 0;
     right: 0;
-    transition: transform 0.3s ease-in-out;
-}
-
-#carrito:hover {
-    transform: scale(1.05);
-}
-
-#carrito h2 {
-    margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
 }
 
 #lista-carrito {
     list-style: none;
     padding: 0;
-}
-
-#lista-carrito li {
-    margin-bottom: 10px;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 #total {
     font-weight: bold;
+    margin-top: 10px;
 }
+
+/* Detalles del producto */
 
 #detalles-producto {
-    background-color: rgba(255, 255, 255, 0.9);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.contenedor-detalles {
-    display: flex;
-}
-
-#detalles-producto img {
-    max-width: 300px;
-    height: auto;
-    margin-right: 20px;
-    border-radius: 5px;
-}
-
-.informacion-detalle {
-    text-align: left;
-}
-
-.informacion-detalle h2 {
-    margin-bottom: 10px;
-}
-
-/* Estilos adicionales */
-
-.titulo h1 {
-    margin: 0;
-}
-
-.oculto {
-    display: none;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Estilos para el formulario de inicio de sesión y filtros */
-
-#formulario-login {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -144,134 +104,31 @@ footer {
     transition: transform 0.3s ease-in-out;
 }
 
-#formulario-login:hover {
-    transform: scale(1.05);
+#detalles-producto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
-#formulario-login form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.informacion-detalle {
+    margin-left: 20px;
 }
 
-#formulario-login label {
-    margin-top: 10px;
-    font-size: 1.2em;
-    color: #333;
-}
-
-#formulario-login input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-}
-
-#formulario-login button {
-    padding: 10px;
-    background-color: #222;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#formulario-login button:hover {
-    background-color: #444;
-}
-
-/* Estilos para filtros y ordenación */
-
-#filtros {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    transition: transform 0.3s ease-in-out;
-}
-
-#filtros:hover {
-    transform: scale(1.05);
-}
-
-#filtros label {
-    font-size: 1.2em;
-    color: #333;
-}
-
-#filtros select {
-    padding: 10px;
-    font-size: 1em;
-}
-
-#filtros select, #filtros label {
-    margin-right: 15px;
-}
-
-/* Estilos para la presentación de lujo */
+/* Presentación de lujo */
 
 .presentacion-lujo {
-    background-color: #000;
+    background-color: #333;
     color: #fff;
-    padding: 50px;
     text-align: center;
-    margin: 20px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    padding: 50px;
 }
 
-.presentacion-lujo h2 {
-    margin-bottom: 20px;
-}
-
-.presentacion-lujo p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
-
-.presentacion-lujo a {
-    color: #fff;
-    text-decoration: underline;
-}
-
-/* Estilos para la interactividad */
-
-.boton-accion {
-    background-color: #222;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    margin-right: 10px;
-    transition: background-color 0.3s;
-}
-
-.boton-accion:hover {
-    background-color: #444;
-}
-
-/* Estilos para la sección de productos destacados */
+/* Productos destacados */
 
 #productos-destacados {
-    background-color: #f9f9f9;
+    background-color: #f5f5f5;
     padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-#productos-destacados h2 {
     text-align: center;
-    margin-bottom: 20px;
 }
 
-#productos-destacados .producto {
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-#productos-destacados .producto:hover {
-    transform: scale(1.03);
-}
+/* ... Otros estilos ... */
