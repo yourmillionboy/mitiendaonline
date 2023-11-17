@@ -1,11 +1,46 @@
-// Paso 4: Sistema de Gestión de Productos
-
 // Base de datos simulada de productos
 let productos = [
     { id: 1, nombre: "Producto 1", precio: 199.99, descripcion: "Descripción del Producto 1", imagen: "producto1.jpg" },
     { id: 2, nombre: "Producto 2", precio: 149.99, descripcion: "Descripción del Producto 2", imagen: "producto2.jpg" },
     // Puedes agregar más productos aquí
 ];
+
+// Variable para almacenar el estado de inicio de sesión
+let usuarioAutenticado = false;
+
+// Variable para almacenar productos filtrados
+let productosFiltrados = [];
+
+// Función para mostrar el formulario de inicio de sesión
+function mostrarFormularioLogin() {
+    const formularioLogin = document.getElementById('formulario-login');
+    formularioLogin.classList.remove('oculto');
+}
+
+// Función para ocultar el formulario de inicio de sesión
+function ocultarFormularioLogin() {
+    const formularioLogin = document.getElementById('formulario-login');
+    formularioLogin.classList.add('oculto');
+}
+
+// Función para iniciar sesión (simulada)
+function iniciarSesion() {
+    const usuarioInput = document.getElementById('usuario');
+    const contrasenaInput = document.getElementById('contrasena');
+
+    // Verifica si el usuario y la contraseña son válidos (simulados)
+    if (usuarioInput.value === 'usuario' && contrasenaInput.value === 'contrasena') {
+        usuarioAutenticado = true;
+        ocultarFormularioLogin();
+        alert('Inicio de sesión exitoso. ¡Bienvenido!');
+    } else {
+        alert('Inicio de sesión fallido. Usuario o contraseña incorrectos.');
+    }
+
+    // Limpia los campos del formulario
+    usuarioInput.value = '';
+    contrasenaInput.value = '';
+}
 
 // Función para mostrar todos los productos en la interfaz
 function mostrarProductos() {
@@ -71,5 +106,9 @@ function eliminarProducto(idProducto) {
     mostrarProductos();
 }
 
-// Mostrar los productos iniciales
-mostrarProductos();
+// Función para mostrar detalles de un producto
+function mostrarDetallesProducto(idProducto) {
+    // Aquí puedes agregar lógica para cargar los detalles del producto desde una fuente de datos
+    const nombre = `Producto ${idProducto}`;
+    const descripcion = `Descripción detallada del ${nombre}.`;
+    const precio = Math.random() * 100 + 50;
