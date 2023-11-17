@@ -1,15 +1,12 @@
 // Base de datos simulada de productos
 let productos = [
-    { id: 1, nombre: "Producto 1", precio: 199.99, descripcion: "Descripción del Producto 1", imagen: "producto1.jpg" },
-    { id: 2, nombre: "Producto 2", precio: 149.99, descripcion: "Descripción del Producto 2", imagen: "producto2.jpg" },
-    // Puedes agregar más productos aquí
+    { id: 1, nombre: "Zapatillas de Running", precio: 199.99, descripcion: "Diseño aerodinámico para un rendimiento óptimo", imagen: "zapatillas.jpg" },
+    { id: 2, nombre: "Bolso de Cuero", precio: 599.99, descripcion: "Hecho a mano con cuero genuino", imagen: "bolso.jpg" },
+    // Agrega más productos según sea necesario
 ];
 
-// Variable para almacenar el estado de inicio de sesión
+// Estado de inicio de sesión
 let usuarioAutenticado = false;
-
-// Variable para almacenar productos filtrados
-let productosFiltrados = [];
 
 // Función para mostrar el formulario de inicio de sesión
 function mostrarFormularioLogin() {
@@ -130,4 +127,5 @@ function mostrarDetallesProducto(idProducto) {
     precioDetalle.textContent = `Precio: $${precio.toFixed(2)}`;
 
     const detallesProducto = document.getElementById('detalles-producto');
-    detallesProducto.classList.remove('oc
+    detallesProducto.classList.remove('oculto');
+}
