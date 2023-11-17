@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #000;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -28,6 +28,12 @@ header {
     margin: 10px;
     padding: 10px;
     width: 300px;
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.producto:hover {
+    transform: scale(1.05);
 }
 
 .producto img {
@@ -39,6 +45,7 @@ header {
 .producto h2 {
     font-size: 1.5rem;
     margin: 10px 0;
+    color: #000;
 }
 
 .precio {
@@ -55,12 +62,18 @@ header {
     border-radius: 4px;
     cursor: pointer;
     margin-right: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.boton-accion:hover {
+    background-color: #000;
 }
 
 /* Filtros y ordenación */
 
 #filtros {
     margin: 20px;
+    text-align: center;
 }
 
 /* Carrito de compras */
@@ -117,7 +130,7 @@ header {
 /* Presentación de lujo */
 
 .presentacion-lujo {
-    background-color: #333;
+    background-color: #000;
     color: #fff;
     text-align: center;
     padding: 50px;
