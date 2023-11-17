@@ -1,77 +1,75 @@
-// Definir una variable global para almacenar el carrito de compras
-let carrito = [];
+// Paso 4: Sistema de Gestión de Productos
 
-// Función para agregar productos al carrito
-function agregarAlCarrito(idProducto, nombre, precio) {
-    const producto = {
-        id: idProducto,
+// Base de datos simulada de productos
+let productos = [
+    { id: 1, nombre: "Producto 1", precio: 199.99, descripcion: "Descripción del Producto 1", imagen: "producto1.jpg" },
+    { id: 2, nombre: "Producto 2", precio: 149.99, descripcion: "Descripción del Producto 2", imagen: "producto2.jpg" },
+    // Puedes agregar más productos aquí
+];
+
+// Función para mostrar todos los productos en la interfaz
+function mostrarProductos() {
+    const contenedorProductos = document.getElementById('productos');
+    contenedorProductos.innerHTML = ''; // Limpiar el contenido existente
+
+    productos.forEach(producto => {
+        const divProducto = document.createElement('div');
+        divProducto.className = 'producto';
+        divProducto.innerHTML = `
+            <img src="${producto.imagen}" alt="${producto.nombre}">
+            <h2>${producto.nombre}</h2>
+            <p class="precio">$${producto.precio.toFixed(2)}</p>
+            <button onclick="mostrarDetallesProducto(${producto.id})">Ver Detalles</button>
+            <button onclick="agregarAlCarrito(${producto.id}, '${producto.nombre}', ${producto.precio})">Agregar al Carrito</button>
+            <button onclick="editarProducto(${producto.id})">Editar</button>
+            <button onclick="eliminarProducto(${producto.id})">Eliminar</button>
+        `;
+
+        contenedorProductos.appendChild(divProducto);
+    });
+}
+
+// Función para agregar un nuevo producto
+function agregarProducto() {
+    const nombre = prompt('Ingrese el nombre del nuevo producto:');
+    const precio = parseFloat(prompt('Ingrese el precio del nuevo producto:'));
+    const descripcion = prompt('Ingrese la descripción del nuevo producto:');
+    const imagen = prompt('Ingrese el nombre de la imagen del nuevo producto (ejemplo: producto3.jpg):');
+
+    const nuevoProducto = {
+        id: productos.length + 1,
         nombre: nombre,
-        precio: precio
+        precio: precio,
+        descripcion: descripcion,
+        imagen: imagen
     };
 
-    carrito.push(producto);
-    actualizarCarrito();
+    productos.push(nuevoProducto);
+    mostrarProductos();
 }
 
-// Función para actualizar la lista de productos en el carrito
-function actualizarCarrito() {
-    const listaCarrito = document.getElementById('lista-carrito');
-    const totalElement = document.getElementById('total');
+// Función para editar un producto existente
+function editarProducto(idProducto) {
+    const productoEditar = productos.find(producto => producto.id === idProducto);
 
-    // Limpiar la lista de carrito antes de actualizar
-    listaCarrito.innerHTML = '';
+    const nuevoNombre = prompt('Ingrese el nuevo nombre:', productoEditar.nombre);
+    const nuevoPrecio = parseFloat(prompt('Ingrese el nuevo precio:', productoEditar.precio));
+    const nuevaDescripcion = prompt('Ingrese la nueva descripción:', productoEditar.descripcion);
+    const nuevaImagen = prompt('Ingrese el nuevo nombre de la imagen (ejemplo: producto3.jpg):', productoEditar.imagen);
 
-    // Calcular el total de la compra
-    let total = 0;
+    productoEditar.nombre = nuevoNombre;
+    productoEditar.precio = nuevoPrecio;
+    productoEditar.descripcion = nuevaDescripcion;
+    productoEditar.imagen = nuevaImagen;
 
-    carrito.forEach(producto => {
-        const li = document.createElement('li');
-        li.textContent = `${producto.nombre} - $${producto.precio.toFixed(2)}`;
-        listaCarrito.appendChild(li);
-
-        total += producto.precio;
-    });
-
-    // Actualizar el total en la interfaz
-    totalElement.textContent = `Total: $${total.toFixed(2)}`;
-
-    // Mostrar o ocultar el carrito según si hay productos
-    const carritoElement = document.getElementById('carrito');
-    carritoElement.style.display = carrito.length > 0 ? 'block' : 'none';
+    mostrarProductos();
 }
 
-// Función para vaciar el carrito
-function vaciarCarrito() {
-    carrito = [];
-    actualizarCarrito();
+// Función para eliminar un producto
+function eliminarProducto(idProducto) {
+    productos = productos.filter(producto => producto.id !== idProducto);
+    mostrarProductos();
 }
 
-// Función para simular la compra (puedes mejorar esto según tus necesidades)
-function realizarCompra() {
-    alert('Gracias por tu compra. ¡Vuelve pronto!');
-    vaciarCarrito();
-}
-
-// Función para mostrar detalles de un producto
-function mostrarDetallesProducto(idProducto) {
-    // Aquí puedes agregar lógica para cargar los detalles del producto desde una fuente de datos
-    const nombre = `Producto ${idProducto}`;
-    const descripcion = `Descripción detallada del ${nombre}.`;
-    const precio = Math.random() * 100 + 50; // Precio aleatorio para fines de demostración
-
-    // Actualizar la interfaz con los detalles del producto
-    document.getElementById('nombre-detalle').textContent = nombre;
-    document.getElementById('descripcion-detalle').textContent = descripcion;
-    document.getElementById('precio-detalle').textContent = `$${precio.toFixed(2)}`;
-    document.getElementById('imagen-detalle').src = `producto${idProducto}.jpg`;
-
-    // Mostrar la sección de detalles del producto
-    const detallesProducto = document.getElementById('detalles-producto');
-    detallesProducto.classList.remove('oculto');
-}
-
-// Función para cerrar la sección de detalles del producto
-function cerrarDetallesProducto() {
-    const detallesProducto = document.getElementById('detalles-producto');
-    detallesProducto.classList.add('oculto');
-}
+// Mostrar los productos iniciales
+mostrarProductos();
