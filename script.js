@@ -54,10 +54,10 @@ function mostrarProductos() {
             <img src="${producto.imagen}" alt="${producto.nombre}">
             <h2>${producto.nombre}</h2>
             <p class="precio">$${producto.precio.toFixed(2)}</p>
-            <button onclick="mostrarDetallesProducto(${producto.id})">Ver Detalles</button>
-            <button onclick="agregarAlCarrito(${producto.id}, '${producto.nombre}', ${producto.precio})">Agregar al Carrito</button>
-            <button onclick="editarProducto(${producto.id})">Editar</button>
-            <button onclick="eliminarProducto(${producto.id})">Eliminar</button>
+            <button class="boton-accion" onclick="mostrarDetallesProducto(${producto.id})">Ver Detalles</button>
+            <button class="boton-accion" onclick="agregarAlCarrito(${producto.id}, '${producto.nombre}', ${producto.precio})">Agregar al Carrito</button>
+            <button class="boton-accion" onclick="editarProducto(${producto.id})">Editar</button>
+            <button class="boton-accion" onclick="eliminarProducto(${producto.id})">Eliminar</button>
         `;
 
         contenedorProductos.appendChild(divProducto);
@@ -112,3 +112,7 @@ function mostrarDetallesProducto(idProducto) {
     const nombre = `Producto ${idProducto}`;
     const descripcion = `Descripción detallada del ${nombre}.`;
     const precio = Math.random() * 100 + 50;
+
+    // Mostrar detalles en la interfaz
+    const imagenDetalle = document.getElementById('imagen-detalle');
+    const nombreDetalle = document
