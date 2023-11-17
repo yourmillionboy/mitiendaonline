@@ -31,6 +31,11 @@ main {
     padding: 15px;
     width: 250px;
     text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.producto:hover {
+    transform: scale(1.05);
 }
 
 .producto img {
@@ -49,6 +54,11 @@ main {
     position: fixed;
     top: 0;
     right: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+#carrito:hover {
+    transform: scale(1.05);
 }
 
 #carrito h2 {
@@ -131,6 +141,11 @@ footer {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     z-index: 2;
+    transition: transform 0.3s ease-in-out;
+}
+
+#formulario-login:hover {
+    transform: scale(1.05);
 }
 
 #formulario-login form {
@@ -172,6 +187,11 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+#filtros:hover {
+    transform: scale(1.05);
 }
 
 #filtros label {
@@ -186,4 +206,72 @@ footer {
 
 #filtros select, #filtros label {
     margin-right: 15px;
+}
+
+/* Estilos para la presentación de lujo */
+
+.presentacion-lujo {
+    background-color: #000;
+    color: #fff;
+    padding: 50px;
+    text-align: center;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.presentacion-lujo h2 {
+    margin-bottom: 20px;
+}
+
+.presentacion-lujo p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.presentacion-lujo a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Estilos para la interactividad */
+
+.boton-accion {
+    background-color: #222;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.boton-accion:hover {
+    background-color: #444;
+}
+
+/* Estilos para la sección de productos destacados */
+
+#productos-destacados {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#productos-destacados h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#productos-destacados .producto {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+#productos-destacados .producto:hover {
+    transform: scale(1.03);
 }
