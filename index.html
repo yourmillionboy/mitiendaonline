@@ -53,8 +53,8 @@
     <h2>Carrito de Compras</h2>
     <ul id="lista-carrito"></ul>
     <p id="total">Total: $0.00</p>
-    <button onclick="realizarCompra()">Realizar Compra</button>
-    <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+    <button class="boton-accion" onclick="realizarCompra()">Realizar Compra</button>
+    <button class="boton-accion" onclick="vaciarCarrito()">Vaciar Carrito</button>
 </aside>
 
 <!-- Detalles del producto -->
@@ -65,9 +65,22 @@
             <h2 id="nombre-detalle"></h2>
             <p id="descripcion-detalle"></p>
             <p id="precio-detalle"></p>
-            <button onclick="cerrarDetallesProducto()">Cerrar</button>
+            <button class="boton-accion" onclick="cerrarDetallesProducto()">Cerrar</button>
         </div>
     </div>
+</div>
+
+<!-- Sección de presentación de lujo -->
+<div class="presentacion-lujo">
+    <h2>¡Descubre la Exclusividad!</h2>
+    <p>Explora nuestra colección única de productos de alta calidad y estilo. En Tienda Online, llevamos la experiencia de compra en línea a un nivel superior. ¡Sumérgete en la elegancia y el lujo!</p>
+    <a href="#" class="boton-accion">Explora Ahora</a>
+</div>
+
+<!-- Sección de productos destacados -->
+<div id="productos-destacados">
+    <h2>Productos Destacados</h2>
+    <main id="productos-destacados-lista"></main>
 </div>
 
 <footer>
