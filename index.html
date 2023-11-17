@@ -14,11 +14,32 @@
         </div>
     </header>
     
-    <section id="productos">
-        <!-- ... (tu lista de productos) ... -->
-    </section>
+    <main>
+        <section id="productos">
+            <!-- Ejemplo de producto -->
+            <div class="producto" onclick="mostrarDetallesProducto(1)">
+                <img src="producto1.jpg" alt="Producto 1">
+                <h2>Producto 1</h2>
+                <p class="precio">$199.99</p>
+            </div>
+            <!-- Repite este bloque para cada producto -->
+        </section>
 
-    <aside id="carrito">
+        <section id="detalles-producto" class="oculto">
+            <div class="contenedor-detalles">
+                <button onclick="cerrarDetallesProducto()">Cerrar</button>
+                <img id="imagen-detalle" src="" alt="Detalle del Producto">
+                <div class="informacion-detalle">
+                    <h2 id="nombre-detalle"></h2>
+                    <p id="descripcion-detalle"></p>
+                    <p class="precio" id="precio-detalle"></p>
+                    <button onclick="agregarAlCarrito(1, 'Producto 1', 199.99)">Agregar al Carrito</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <aside id="carrito" class="oculto">
         <h2>Carrito de Compras</h2>
         <ul id="lista-carrito">
             <!-- La lista de productos en el carrito se actualizará dinámicamente con JavaScript -->
