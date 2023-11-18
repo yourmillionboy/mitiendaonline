@@ -16,11 +16,20 @@
     </div>
 </header>
 
-<!-- Resto del contenido según tus necesidades... -->
+<!-- Formulario de inicio de sesión -->
+<div id="formulario-login" class="oculto">
+    <form onsubmit="iniciarSesion(); return false;">
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" required>
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" required>
+        <button type="submit">Iniciar Sesión</button>
+        <button type="button" onclick="cerrarFormularioLogin()">Cerrar</button>
+    </form>
+</div>
 
-</body>
-</html>
-<!-- ... (Código anterior) -->
+<!-- Contenedor de productos -->
+<main id="productos"></main>
 
 <!-- Carrito de compras -->
 <aside id="carrito" class="oculto">
@@ -31,10 +40,36 @@
     <button class="boton-accion" onclick="vaciarCarrito()">Vaciar Carrito</button>
 </aside>
 
-<!-- Productos destacados -->
+<!-- Detalles del producto -->
+<div id="detalles-producto" class="oculto">
+    <div class="contenedor-detalles">
+        <img id="imagen-detalle" src="" alt="Detalles del Producto">
+        <div class="informacion-detalle">
+            <h2 id="nombre-detalle"></h2>
+            <p id="descripcion-detalle"></p>
+            <p id="precio-detalle"></p>
+            <button class="boton-accion" onclick="cerrarDetallesProducto()">Cerrar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Sección de presentación de lujo -->
+<div class="presentacion-lujo">
+    <h2>¡Descubre la Exclusividad!</h2>
+    <p>Explora nuestra colección única de productos de alta calidad y estilo. En Tienda Online, llevamos la experiencia de compra en línea a un nivel superior. ¡Sumérgete en la elegancia y el lujo!</p>
+    <a href="#" class="boton-accion">Explora Ahora</a>
+</div>
+
+<!-- Sección de productos destacados -->
 <div id="productos-destacados">
     <h2>Productos Destacados</h2>
     <main id="productos-destacados-lista"></main>
 </div>
 
-<!-- ... (Resto del contenido) -->
+<footer>
+    <p>&copy; 2023 Tienda de Lujo</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
