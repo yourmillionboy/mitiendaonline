@@ -1,5 +1,3 @@
-/* Estilos avanzados inspirados en marcas de lujo */
-
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -43,4 +41,106 @@ header {
     background-color: #333;
 }
 
-/* Resto de los estilos según necesidades... */
+#formulario-login {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#formulario-login label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+#formulario-login input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+#carrito {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 20px;
+    border-left: 1px solid #ddd;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#lista-carrito {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#detalles-producto {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#detalles-producto img {
+    max-width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+#productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.producto {
+    width: 300px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#presentacion-lujo {
+    background-color: #333;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+}
+
+#productos-destacados {
+    background-color: #fff;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#productos-destacados-lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
