@@ -129,3 +129,91 @@ function mostrarDetallesProducto(idProducto) {
     const detallesProducto = document.getElementById('detalles-producto');
     detallesProducto.classList.remove('oculto');
 }
+// ... (Código anterior)
+
+// Estado del carrito de compras
+let carrito = [];
+
+// Función para agregar un producto al carrito
+function agregarAlCarrito(idProducto, nombre, precio) {
+    const cantidad = parseInt(prompt(`Ingrese la cantidad de ${nombre} que desea agregar al carrito:`)) || 1;
+
+    const productoEnCarrito = carrito.find(item => item.id === idProducto);
+
+    if (productoEnCarrito) {
+        productoEnCarrito.cantidad += cantidad;
+    } else {
+        carrito.push({ id: idProducto, nombre: nombre, precio: precio, cantidad: cantidad });
+    }
+
+    actualizarCarrito();
+}
+
+// Función para actualizar la visualización del carrito
+function actualizarCarrito() {
+    const listaCarrito = document.getElementById('lista-carrito');
+    const totalCarrito = document.getElementById('total');
+
+    listaCarrito.innerHTML = ''; // Limpiar el contenido existente
+
+    let total = 0;
+
+    carrito.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.nombre} x${item.cantidad} - $${(item.precio * item.cantidad).toFixed(2)}`;
+        listaCarrito.appendChild(li);
+        total += item.precio * item.cantidad;
+    });
+
+    totalCarrito.textContent = `Total: $${total.toFixed(2)}`;
+
+    const carritoElemento = document.getElementById('carrito');
+    carritoElemento.classList.remove('oculto');
+}
+
+// Función para realizar una compra
+function realizarCompra() {
+    if (carrito.length === 0) {
+        alert('¡El carrito está vacío! Agrega productos antes de realizar una compra.');
+        return;
+    }
+
+    const confirmacion = confirm('¿Deseas realizar la compra?');
+    if (confirmacion) {
+        alert('¡Compra realizada con éxito! Gracias por tu compra.');
+        vaciarCarrito();
+    }
+}
+
+// Función para vaciar el carrito
+function vaciarCarrito() {
+    carrito = [];
+    actualizarCarrito();
+}
+
+// Función para mostrar productos destacados
+function mostrarProductosDestacados() {
+    const contenedorProductosDestacados = document.getElementById('productos-destacados-lista');
+    contenedorProductosDestacados.innerHTML = '';
+
+    // Puedes agregar lógica para cargar productos destacados desde una fuente de datos
+    const productosDestacados = [
+        { nombre: "Reloj de Edición Especial", precio: 899.99, imagen: "reloj.jpg" },
+        { nombre: "Chaqueta de Cuero Premium", precio: 799.99, imagen: "chaqueta.jpg" },
+    ];
+
+    productosDestacados.forEach(producto => {
+        const divProductoDestacado = document.createElement('div');
+        divProductoDestacado.className = 'producto-destacado';
+        divProductoDestacado.innerHTML = `
+            <img src="${producto.imagen}" alt="${producto.nombre}">
+            <h2>${producto.nombre}</h2>
+            <p class="precio">$${producto.precio.toFixed(2)}</p>
+            <button class="boton-accion" onclick="agregarAlCarrito(${carrito.length + 1}, '${producto.nombre}', ${producto.precio})">Agregar al Carrito</button>
+        `;
+
+        contenedorProductosDestacados.appendChild(divProductoDestacado);
+    });
+}
+
+// ... (Funciones anteriores)
