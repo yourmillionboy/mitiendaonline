@@ -66,7 +66,6 @@ function actualizarCarrito() {
 
 // Función para mostrar detalles de un producto
 function mostrarDetallesProducto(idProducto) {
-    // Esta función puede expandirse para cargar detalles del producto desde una fuente de datos
     const productoSeleccionado = productos.find(producto => producto.id === idProducto);
 
     if (productoSeleccionado) {
@@ -85,6 +84,7 @@ function mostrarDetallesProducto(idProducto) {
     } else {
         alert('No se encontraron detalles para el producto seleccionado.');
     }
+}
 
 // Función para cerrar los detalles del producto
 function cerrarDetallesProducto() {
@@ -99,7 +99,6 @@ function cerrarFormularioLogin() {
 }
 
 // ... (Otras funciones según sea necesario)
-
 
 // Inicializar la página mostrando los productos
 mostrarProductos();
