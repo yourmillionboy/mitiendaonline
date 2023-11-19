@@ -85,7 +85,6 @@ function mostrarDetallesProducto(idProducto) {
     } else {
         alert('No se encontraron detalles para el producto seleccionado.');
     }
-}
 
 // Función para cerrar los detalles del producto
 function cerrarDetallesProducto() {
@@ -93,7 +92,14 @@ function cerrarDetallesProducto() {
     detallesProducto.classList.add('oculto');
 }
 
+// Función para cerrar el formulario de inicio de sesión
+function cerrarFormularioLogin() {
+    const formularioLogin = document.getElementById('formulario-login');
+    formularioLogin.classList.add('oculto');
+}
+
 // ... (Otras funciones según sea necesario)
+
 
 // Inicializar la página mostrando los productos
 mostrarProductos();
